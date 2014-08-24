@@ -1,7 +1,7 @@
 # Miscellaneous Teaching Materials #
 
 ## Overview
-This repo contents some miscellaneous teaching materials that I used for a variety of courses.  Any errors or typos in are no one's fault but my own. In this vein, if you think you see an error, please [inform me](mailto:dana@danaernst.com), so that it can be remedied.
+This repo contents some miscellaneous teaching materials that I use for a variety of courses.  Any errors or typos in are no one's fault but my own. In this vein, if you think you see an error, please [inform me](mailto:dana@danaernst.com), so that it can be remedied.
 
 ## License Information
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0](http://creativecommons.org/licenses/by-sa/3.0/us/) license.  You are free to:
