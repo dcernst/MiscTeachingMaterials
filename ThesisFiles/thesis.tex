@@ -1,0 +1,45 @@
+\documentclass[12pt]{nauthesis}                       
+% \nofiles
+% prevents writing new toc lof files
+
+\usepackage{tikz}
+\usetikzlibrary{3d}
+\usepackage{amsmath,amssymb,amsfonts,amscd, array,amsthm}
+\usepackage{subcaption}
+\usepackage[lmargin=1in,rmargin=1in]{geometry}
+
+\input{preamble}
+
+\begin{document}
+
+\maketitle
+
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\include{abstract}
+
+%\include{acknowle}
+
+\tableofcontents
+
+\listoffigures
+\newpage
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{chap1}
+
+\include{chap2}
+
+\include{chap3}
+
+\include{chap4}
+
+%\setspacing{1.0}
+\bibliographystyle{plain}
+\bibliography{biblio}
+
+\end{document}
