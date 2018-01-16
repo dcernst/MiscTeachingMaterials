@@ -17,4 +17,4 @@ Under the following conditions:
 When attributing this work, please include Stan and Matt, as well as me.
 
 ## Comments
-You can find the most up-to-date version of these materials on [Github](https://github.com/dcernst/MiscTeachingMaterials).  I would be thrilled if you used these notes and improved them.  If you make any improvements or modifications, you can either make a pull request on Github or submit them to me at [dana.ernst@nau.edu](dana.ernst@nau.edu).
+You can find the most up-to-date version of these materials on [Github](https://github.com/dcernst/MiscTeachingMaterials).  I would be thrilled if you used these notes and improved them.  If you make any improvements or modifications, you can either make a pull request on Github or submit them to me at [dana.ernst@nau.edu](mailto:dana.ernst@nau.edu).
