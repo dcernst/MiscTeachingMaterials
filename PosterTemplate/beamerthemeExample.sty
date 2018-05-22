@@ -1,0 +1,194 @@
+% inspired by beamerthemeDreuw.sty (beamerposter) - dark blue and then beamerthemePosterlftuke04.sty
+%\ProvidesPackage{beamerthemeJMM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectcolormodel{cmyk}
+%\selectcolormodel{rgb}
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% foreground
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% headline
+\definecolor{cf1}
+{named}{white}                              % white
+
+% author, footline, lines
+\definecolor{cf2}
+{cmyk/HTML}{0.34,0.28,0.27,0.00/ababad}     % light gray
+
+% institution
+\definecolor{cf3}
+{cmyk/HTML}{0.34,0.28,0.27,0.00/ababad}     % light gray
+
+% blocktitle,exampletitle
+\definecolor{cff}
+{named}{white}                              % white
+
+% blockbody
+\definecolor{cfb}
+{named}{black}                              % black
+
+% normal text
+\definecolor{cfn}
+{named}{black}                              % black
+
+% alert
+\definecolor{cfa}
+{cmyk/HTML}{0.86,0.77,0.00,0.00/3e53a4}     % blue
+
+% structure (frametitle, item)
+\definecolor{cfs}
+{cmyk/HTML}{0.86,0.77,0.00,0.00/3e53a4}     % blue
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% background
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% headline, footline
+\definecolor{cb1}
+{cmyk/HTML}{1.00,1.00,0.33,0.50/150d42}     % dark blue
+
+% blocktitle, exampletitle
+\definecolor{cbf}
+{cmyk/HTML}{0.67,0.60,0.39,0.16/5e5f72}     % dark gray
+
+% blockbody
+\definecolor{cbb}
+{named}{white}                              % white
+
+% normal text, footline
+\definecolor{cbn}
+{cmyk/HTML}{0.34,0.28,0.27,0.00/ababad}     % light gray
+
+\definecolor{naublue}{cmyk}{.80,.55,0,.55}
+%\definecolor{naublue}{cmyk}{1,.72,0,.32}
+\definecolor{naugreen}{cmyk}{.43,0,.34,.38}
+\definecolor{magenta}{cmyk}{0.00,1.00,0.45,0.31}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% headline colors and fonts
+\setbeamercolor{headline}{fg=naublue,bg=cf1}
+%\setbeamercolor{title in headline}{fg=naublue}
+%\setbeamercolor{author in headline}{fg=naugreen}
+%\setbeamercolor{institute in headline}{fg=cf3}
+
+% lines
+\setbeamercolor{upper separation line head}{fg=naublue}
+\setbeamercolor{separation line}{bg=naublue}
+
+% footline colors and fonts
+\setbeamercolor{footline}{fg=cf1, bg=naublue}
+\setbeamerfont{footline}{size=\large,series=\bfseries}
+
+% poster background, body colors, and fonts
+\setbeamercolor*{normal text}{fg=cfn, bg=cbn}
+
+% block environment
+%\setbeamercolor*{block title}{fg=cff,bg=cbf}
+\setbeamercolor*{block title}{fg=cff,bg=naublue}
+\setbeamerfont{block title}{size=\Large,series=\bfseries}
+\setbeamercolor*{block body}{fg=cfb,bg=cbb}
+
+% example environment
+\setbeamercolor*{example title}{bg=cff,fg=cbf}
+\setbeamercolor*{example body}{fg=cfb,bg=cbb}
+\setbeamercolor*{example text}{fg=cfb,bg=cbb}
+
+\setbeamercolor{alerted text}{fg=purple}
+%\setbeamercolor{alerted text}{series=\bfseries}
+
+\setbeamercolor{structure}{fg=naublue}
+% frametitle, item
+\setbeamertemplate{itemize items}[triangle]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{block begin}{
+\vskip1ex
+\begin{beamercolorbox}[rounded=true,shadow=false,leftskip=.5ex,colsep*=.5ex]{block title}
+\usebeamerfont*{block title}\insertblocktitle
+\end{beamercolorbox}
+{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+\usebeamerfont{block body}%
+\begin{beamercolorbox}[rounded=true,shadow=false,colsep*=.5ex,sep=.5ex,rightskip=.5ex,vmode]{block body}%
+\ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+}
+\setbeamertemplate{block end}{
+\end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{headline}{
+\leavevmode
+
+\begin{beamercolorbox}[wd=\paperwidth]{headline}
+
+\begin{columns}%[T]
+
+\begin{column}{.15\paperwidth}
+\ 
+
+\vspace{.5cm}
+\includegraphics[height=5in]{NAU_CEFNS_Logo.png}%scale=.35
+%\vspace{.5cm}
+\end{column}
+
+\begin{column}{.7\paperwidth}
+\vskip4ex
+%\usebeamercolor{title in headline}{\textbf{\Huge{\inserttitle}}\\[1ex]}
+\usebeamercolor{title in headline}{\textbf{\fontsize{95}{114}\selectfont{\inserttitle}}\\[1ex]}
+\vspace{.8cm}
+\usebeamercolor{author in headline}{\textbf{\fontsize{70}{84}\selectfont{\insertauthor}}\\[1ex]}
+\vspace{0.8cm}
+\usebeamercolor{institute in headline}{\textbf{\fontsize{45}{54}\selectfont{\insertinstitute}}\\[1ex]}
+%\vspace{0.1cm}
+\end{column}
+
+\begin{column}{.1\paperwidth}
+\
+\vspace{.5cm}
+\includegraphics[height=4.25in]{BraidGraph.pdf}\hspace{1cm}
+\vspace{-.8cm}
+\end{column}
+
+\end{columns}
+
+\end{beamercolorbox}
+
+\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+\rule{0pt}{2pt}
+\end{beamercolorbox}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setbeamertemplate{footline}{
+%\begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+%\rule{0pt}{2pt}
+%\end{beamercolorbox}
+%
+%\begin{beamercolorbox}[ht=4ex,leftskip=1cm,rightskip=1cm]{footline}%
+%\textsf{Email:} Brittany Carr [\url{bc675@nau.edu}]
+%\hfill \textsf{Directed by Dana C. Ernst}
+%\vskip1ex
+%\end{beamercolorbox}
+%
+%\begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+%\rule{0pt}{2pt}
+%\end{beamercolorbox}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Display a grid to help align images ... and it looks nice with this color scheme
+\beamertemplategridbackground[1cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<all>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster"
+%%% End:

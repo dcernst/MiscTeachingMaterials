@@ -1,0 +1,629 @@
+\documentclass[final]{beamer}
+\mode<presentation>
+\usetheme{Example}  %modification of Posterlftuke04
+
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage[size=custom,height=86.36,width=111.76,scale=1.3]{beamerposter}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{pgfplots}
+\usetikzlibrary{spy,backgrounds,decorations,positioning, decorations.markings, arrows,shapes, calc}
+\tikzset{>=latex}
+\usepackage{marvosym}
+\usepackage{xcolor}
+\usepackage{verbatim}
+\usepackage{manfnt}
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{bm}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{scopes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations.pathmorphing} 
+
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0, 0, .6}
+\definecolor{grey}{rgb}{.7, .7, .7}
+
+\selectcolormodel{cmyk}
+%\definecolor{naugreen}{cmyk}{.43,0,.34,.38}
+%\definecolor{naublue}{cmyk}{1,.72,0,.30}
+%\definecolor{softplum}{cmyk}{.02,.45,0,.68}%.37
+%\definecolor{orangesalmon}{cmyk}{0,.53,.87,0}
+%\definecolor{lightorange}{cmyk}{0,.45,.59,.02}
+%\definecolor{brickorange}{cmyk}{0,.59,.59,.20}
+%\definecolor{deeppink}{cmyk}{0,.6,.3,.3}
+%\definecolor{orchid}{cmyk}{0,.49,.02,.05}
+%\definecolor{purple}{RGB}{172,40,246}
+%\definecolor{orange}{RGB}{255,102,0}
+%\definecolor{springgreen}{cmyk}{1.00,0,1,0}
+%
+%\definecolor{plum}{RGB}{139,14,58}
+%\definecolor{sunshine}{RGB}{252,205,0}
+%\definecolor{peony}{RGB}{101,10,97}
+
+%%% Colors %%%
+%reds
+\definecolor{rred}{rgb}{0.9, 0.17, 0.31}
+\definecolor{darkred}{cmyk}{0,1,1,.3}
+\definecolor{rose}{cmyk}{0,1.00,.20,0}
+\definecolor{brightrose}{cmyk}{0,1.00,.30,0}
+\definecolor{bloodorange}{cmyk}{0,.92,.95,.25}
+
+%greens
+\definecolor{ggreen}{RGB}{0,153,0}
+\definecolor{naugreen}{cmyk}{.64,0,.55,.55}
+\definecolor{springgreen}{cmyk}{1.00,0,.70,.02}
+\definecolor{limegreen}{RGB}{70,255,25}
+\definecolor{lime}{RGB}{	124,252,0}
+\definecolor{armygreen}{RGB}{71,115,0}
+
+%blues
+\definecolor{darkblue}{RGB}{0,0,255}
+\definecolor{turq}{RGB}{72,209,204}
+\definecolor{naublue}{cmyk}{1,.72,0,.32}
+\definecolor{mediterranean}{cmyk}{.67,0,.08,.3}
+\definecolor{butterfly}{cmyk}{.95,.59,0,.10}
+\definecolor{icyblue}{cmyk}{.43,0,0.1,0}
+\definecolor{lightskyblue}{cmyk}{.4,.11,0,.2}
+
+%orange
+\definecolor{orange2}{RGB}{255,100,0}
+\definecolor{orange}{RGB}{255,102,0}
+\definecolor{nectarine}{cmyk}{0,0.70,1.00,0}
+
+%purples
+\definecolor{purple}{RGB}{153,51,255}
+\definecolor{darkorchid}{cmyk}{.25,.76,0,.45}
+\definecolor{purple2}{RGB}{159,51,250}
+
+%greys
+\definecolor{gray}{RGB}{220,220,220}
+\definecolor{grey}{RGB}{111,111,111}
+\definecolor{manatee}{rgb}{0.59, 0.6, 0.67}
+\definecolor{darkgray}{cmyk}{0,0,0,.67}
+
+%officially defined NAU approved colors we can use
+\definecolor{sunset}{cmyk}{0,.66,.99,0}%orange
+\definecolor{fallaspen}{cmyk}{0,.35,.85,0}%lighterorange
+\definecolor{summershade}{RGB}{0,133,63}%green
+\definecolor{supai}{RGB}{0,172,165}%bluegreen
+\definecolor{sky}{RGB}{0,102,179} %skyblue
+\definecolor{twilight}{RGB}{0,102,179} %darker blue
+\definecolor{monsoon}{RGB}{195,184,178} %a taupe-ish color
+\definecolor{redrock}{RGB}{177,84,29} %brick red/brown
+%official colors
+\definecolor{nautrueblue}{RGB}{0,51,102}
+\definecolor{naugold}{cmyk}{0,.16,1.0,0}
+
+
+
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+%%----------------%%
+
+\setbeamercolor{alerted text}{fg=sunset}
+
+\DeclareMathOperator{\mex}{mex}
+\DeclareMathOperator{\nim}{nim}
+\DeclareMathOperator{\Opt}{Opt}
+
+\newtheorem{comments}{Comments}
+\newtheorem{question}{Question}
+\newtheorem{goal}{Goal}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+
+\newcommand{\w}{\overline{w}}
+\newcommand{\uu}{\overline{u}}
+\newcommand\xxaxis{0}
+\newcommand\yyaxis{90}
+
+\newcommand\altheapblock[4]{
+\fill[fill=#4, fill opacity=1, draw=black, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-.5,-.5) rectangle (.5,.5);\node[inner sep=0pt]at (#1,#2) {\scriptsize $#3$};}
+
+%\renewcommand\thesubfigure{(\alph{subfigure})}
+
+\newcommand\dheapblock[4]{\draw[dotted, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-.5,-.5) rectangle (.5,.5);\node[inner sep=0pt]at (#1,#2) {\footnotesize $#3$};}
+
+\newcommand\sheapblock[4]{\draw[pattern= north west lines, pattern color=#4, draw=#4, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node[inner sep=0pt]at (#1,#2) {\scriptsize $#3$};}
+
+\newcommand\heapblock[4]{\fill[fill=#4, fill opacity=1, draw=black, line width=1.1pt, rounded corners,shift={(\xxaxis:#1)},shift={(\yyaxis:#2)}] (-1,-1) rectangle (1,1);\node at (#1,#2) {\footnotesize $#3$};}
+
+
+\def\vdotsalt{\vbox{\baselineskip=10pt \lineskiplimit=0pt
+\kern6pt \hbox{.}\hbox{.}\hbox{.}}}
+
+
+
+\setlength{\fboxrule}{3pt}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Structure of braid graphs for Coxeter groups}
+
+\institute{\color{summershade}Department of Mathematics \& Statistics, Northern Arizona University}
+\author{Emalina Bidari \& Brandon Samz, Directed by Dana C.~Ernst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frame}{}
+
+\vspace{-1em}
+
+\begin{columns}[T]
+
+%%%%%%%%%%%%%%%
+
+\begin{column}{.33\linewidth}
+%---------------------%
+\begin{block}{Coxeter systems of type $A$ and $B$}
+
+The \alert{Coxeter group $W(B_{n+1})$} is generated by $\{s_0,s_1,s_2,...,s_{n}\}$ and is subject to the defining relations:
+
+\vspace{-0.2em}
+\begin{enumerate}
+\item $s_is_i = e$ for all $i$
+\item $s_is_j = s_js_i$ when $\abs{i-j} > 1$ (\alert{commutation relation})
+\item $s_is_{i+1}s_i = s_{i+1}s_is_{i+1}$ if $1\leq i \leq n-1$ (\alert{short braid})\\
+\item $s_{0}s_{1}s_{0}s_{1}=s_{1}s_{0}s_{1}s_{0}$ (\alert{long braid})
+\end{enumerate}
+
+Removing the generator $s_0$ and the corresponding relation yields the \alert{Coxeter group $W(A_n)$}, which is isomorphic to the symmetric group $S_{n+1}$ via $s_i\mapsto (i,i+1)$. 
+
+\end{block}
+
+%---------------------%
+
+\begin{block}{Reduced expressions}
+A word $\w = s_{x_1}s_{x_2}\cdots s_{x_m}$ is called an \alert{expression} for $w\in W$ if it is equal to $w$ when considered as a group element. If $m$ is minimal among all expressions for $w$, then $\w$ is called a \alert{reduced expression}, and the \alert{length} of $w$ is $\ell(w)=m$.
+\end{block}
+
+%---------------------%
+
+\begin{block}{Example}
+Consider the expression $\w = s_3s_1s_2s_3s_2$ for $w \in W(A_3)$. We see that
+\[
+s_3s_1\textcolor{limegreen}{s_2s_3s_2}=\textcolor{rose}{s_3s_1}s_3s_2s_3=s_1\textcolor{monsoon}{s_3s_3}s_2s_3=s_1s_2s_3.
+\]
+Then $s_3s_1s_2s_3s_2$ is not reduced. It turns out that the expression on the right is reduced, so $\ell(w)=3$.
+\end{block}
+
+%---------------------%
+\begin{block}{Matsumoto's Theorem}
+Any two reduced expressions for $w$ differ by a sequence of commutation moves and braid moves.
+%\vspace{.08em}
+\end{block}
+
+%---------------------%
+
+\begin{block}{Definition}
+For $w\in W$, define the \alert{Matsumoto graph} $M(w)$ via:
+%\vspace{-.5em}
+\begin{itemize}
+\item Vertices: reduced expressions for $w$
+\item Edges: $\w_1$ and $\w_2$ are connected by an edge iff $\w_1$ and $\w_2$ are related via a single commutation or braid move
+\end{itemize}
+\end{block}
+
+%---------------------%
+
+\begin{block}{Matsumoto graph for an element in $\mathbf{W(A_3)}$}%{Example of a Matsumoto Graph}
+
+%\vspace{.5em}
+
+%The Matsumoto graph for the ``longest element" in $W(A_3)$:
+\begin{figure}
+\begin{center}
+\includegraphics[scale=3.05]{MastumotoGraph.pdf}
+%\begin{tikzpicture}[>=latex, scale=1.4, line join=bevel,]
+%\node (node_1) at (5,0)  {\small 121321};
+%\node (node_2) at (9,0) {\small 123121};
+%\node (node_3) at (3,1.75) {\small 212321};
+%\node (node_4) at (11,1.75) {\small 123212};
+%\node (node_5) at (2,4) {\small 213231};
+%\node (node_6) at (12,4) {\small 132312};
+%\node (node_7) at (0,5.5) {\small 231231};
+%\node (node_8) at (4,5.5) {\small 213213};
+%\node (node_9) at (10,5.5) {\small 312312};
+%\node (node_10) at (14,5.5) {\small 132132};
+%\node (node_11) at (2,7) {\small 231213};
+%\node (node_12) at (12,7) {\small 312132};
+%\node (node_13) at (3,9.25) {\small 232123};
+%\node (node_14) at (11,9.25) {\small 321232};
+%\node (node_15) at (5,11) {\small 323123};
+%\node (node_16) at (9,11) {\small 321323};
+%
+%\draw [red,-,ultra thick] (node_7) to (node_5);
+%\draw [red,-,ultra thick] (node_7) to (node_11);
+%\draw [red,-,ultra thick] (node_5) to (node_8);
+%\draw [red,-,ultra thick] (node_11) to (node_8);
+%\draw [red,-,ultra thick] (node_9) to (node_6);
+%\draw [red,-,ultra thick] (node_9) to (node_12);
+%\draw [red,-,ultra thick] (node_6) to (node_10);
+%\draw [red,-,ultra thick] (node_12) to (node_10);
+%\draw [red,-,ultra thick] (node_1) to (node_2);
+%\draw [red,-,ultra thick] (node_15) to (node_16);
+%
+%\draw [green,-,ultra thick] (node_1) to (node_3);
+%\draw [green,-,ultra thick] (node_2) to (node_4);
+%\draw [green,-,ultra thick] (node_3) to (node_5);
+%\draw [green,-,ultra thick] (node_4) to (node_6);
+%\draw [green,-,ultra thick] (node_11) to (node_13);
+%\draw [green,-,ultra thick] (node_12) to (node_14);
+%\draw [green,-,ultra thick] (node_13) to (node_15);
+%\draw [green,-,ultra thick] (node_14) to (node_16);
+%\end{tikzpicture}
+\end{center}
+%\caption{Matsumoto graph for the ``longest element" in $W(A_3)$}
+\end{figure}
+
+\end{block}
+
+
+%---------------------%
+
+\end{column}
+
+%%%%%%%%%%%%%%%
+
+\begin{column}{.33\linewidth}
+
+%---------------------%
+
+\begin{block}{Braid equivalence}
+If $\w_1$ and $\w_2$ are reduced expressions for $w \in W$, then $\w_1$ and $\w_2$ are \alert{braid equivalent} iff we can obtain $\w_2$ from $\w_1$ via a sequence of braid moves. The equivalence classes are called \alert{braid classes}.
+\end{block}
+%---------------------%
+
+\begin{block}{Example}
+Consider the 16 reduced expressions for the an element in $W(A_3)$. Applying all possible braid moves yields 8 braid classes:
+
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{itemize}
+\item[] $[123121]_b = \{123121,123212,132312\}$
+\item[] $[312132]_b = \{312132,321232,321323\}$
+\item[] $[121321]_b = \{121321,212321,213231\}$
+\item[] $[231213]_b = \{231213,232123,323123\}$
+\end{itemize}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{itemize}
+\item[] $[312312]_b = \{312312\}$
+\item[] $[132132]_b = \{132132\}$
+\item[] $[213213]_b = \{213213\}$
+\item[] $[231231]_b = \{231231\}$
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{.2em}
+\end{block}
+
+%--------------------%
+
+\begin{block}{Braid chains}
+Loosely speaking, a \alert{braid chain} is a reduced expression with the property that we can ``slide" a braid across the whole expression.
+\vspace{1em}
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\node (label0) at (0,0) {$\bm{\textcolor{rose}{343}}546576$};
+\node (label1) at (10,0) {$\bm{\textcolor{supai}{43454}}6576$};
+\node(label2) at (20,0) {$43\bm{\textcolor{supai}{54}\textcolor{supai}{5}\textcolor{supai}{65}}76$};
+\node(label2) at (30,0) {$4354\bm{\textcolor{supai}{65}\textcolor{supai}{6}\textcolor{supai}{76}}$};
+\node(label2) at (40,0) {$435465\bm{\textcolor{rose}{76}\textcolor{rose}{7}}$};
+\end{tikzpicture}
+\end{center}
+%\vspace{1em}
+In type $B$, expressions for braid chains that lack the $s_0$ generator look and function the same as a braid chain in type $A$. The addition of the generator gives us the potential to perform a \alert{long braid} move.
+
+\vspace{1em}
+\begin{tikzpicture}[scale=0.7]
+Examples of \alert{braid chains} and their corresponding \alert{tracks}.
+%
+\node (label1) at (0,0) {$\bm{\textcolor{rose}{212}}0102132$};
+\node (label2) at (10,0) {$\bm{\textcolor{supai}{121010}}2132$};
+\node(label3) at (20,0) {$12\bm{\textcolor{supai}{010121}}32$};
+\node(label4) at (30,0) {$12010\bm{\textcolor{supai}{21232}}$};
+\node(label5) at (40,0) {$1201021\bm{\textcolor{rose}{323}}$};
+\end{tikzpicture}
+\end{block}
+
+%---------------------%
+
+\begin{block}{Maximal braid chains}
+For a reduced expression $\w$, a consecutive subword is called a \alert{maximal braid chain} if it is a braid chain that is not contained (with respect to position) in any other braid chain in that word.
+
+\vspace{1em}
+A factorization into maximal braid chains is called a \alert{braid chain factorization}. It turns out that braid chain factorizations are unique.
+\end{block}
+
+%---------------------%
+
+\begin{block}{Theorem}
+Suppose $\w$ and $\w'$ are two reduced expressions for $w \in W(A_n)$ or $w \in W(B_n)$ having braid chain factorizations $b_1\mid b_2\mid \cdots\mid b_m$ and $b'_1\mid b'_2\mid\cdots\mid b'_r$, respectively. Then $\w$ and $\w'$ are braid equivalent iff
+\vspace{.2em}
+\begin{enumerate}
+\item $m=r$
+\item $b_i$ is braid equivalent to $b'_i$ for $1\leq i\leq m$.
+\end{enumerate}
+%Moreover, if $\w$ and $\w'$ are braid equivalent, then $\cs(\w)=\cs(\w')$.
+\end{block}
+
+%---------------------%
+
+\begin{block}{Theorem}
+If $\w$ is a reduced expression for $w \in W(A_n)$ or $w \in W(B_n)$ having braid chain factorization $b_1 \mid b_2 \mid \cdots \mid b_m$ such that each $\ell(b_i)=2k_i-1$ if $b_i$ is a type $A$ braid chain, and $\ell(b_i)=2k_i$ if $b_i$ is a type $B$ braid chain, then
+\[
+|[\w]_b|=\prod_{i=1}^m k_i.
+\]
+\end{block}
+
+\end{column}
+
+%%%%%%%%%%%%%%%
+
+\begin{column}{.33\linewidth}
+
+%---------------------%
+
+\begin{block}{Braid graphs of braid classes}
+\vspace{.3em}
+For a reduced expression $\w$ of $w \in W$ define the \alert{braid graph} $\mathcal{B}([\w]_b)$ for the braid class $[\w]_b$ via:
+%\vspace{-.5em}
+\begin{itemize}
+\item Vertices: reduced expressions in $[\w]_b$
+\item Edges: $\w_1$ and $\w_2$ are connected by an edge iff $\w_1$ and $\w_2$ are related via a single braid move
+\end{itemize}
+A braid graph is simply a \textcolor{limegreen}{green} connected component in the Matsumoto graph.
+\end{block}
+
+%---------------------%
+
+\begin{block}{Theorem (Bidari, Ernst, Samz)}
+
+If $\w$ is a reduced expression for $w \in W(A_n)$ or $w \in W(B_n)$ having braid chain factorization $b_1 \mid b_2 \mid \cdots \mid b_m$ such that each $\ell(b_i)=2k_i-1$ or $\ell(b_i)=2k_i$, depending on whether $b_i$ is a type $A$ or type $B$ braid chain, then
+\[
+\mathcal{B}([\w]_b) =
+\begin{tabular}{c}
+\includegraphics[scale=2.85]{TheoremGraph.pdf}
+%\begin{tikzpicture}[scale=2.5,every circle node/.style={draw, circle, fill,inner sep=1pt}, decoration={brace,amplitude=7}]
+%\node [circle] (a) at (2.5,0){};
+%\node [circle] (b) at (2.5,-1){};
+%\node (dots) at (2.5,-1.4){$\vdots$};
+%\node [circle] at (2.5,-2) (c){};
+%\node [circle] at (2.5,-3)(d){};
+%\path[-] (a) edge[green,ultra thick] (b);
+%\path[-] (c) edge[green,ultra thick] (d);
+%\draw [decorate] ([xshift=2mm]a.east) --node[right=2mm]{$k_1$} ([xshift=2mm]d.east);
+%
+%\node at (4,-1.5) {$\Box$};
+%
+%\node [circle] (e) at (4.5,0){};
+%\node [circle] (f) at (4.5,-1){};
+%\node (dots) at (4.5,-1.4){$\vdots$};
+%\node [circle] at (4.5,-2) (g){};
+%\node [circle] at (4.5,-3)(h){};
+%\path[-] (e) edge[green,ultra thick] (f);
+%\path[-] (g) edge[green,ultra thick] (h);
+%\draw [decorate] ([xshift=2mm]e.east) --node[right=2mm]{$k_2$} ([xshift=2mm]h.east);
+%
+%\node at (6,-1.5) {$\Box$};
+%\node at (6.55,-1.5) {$\cdots$};
+%\node at (7,-1.5) {$\Box$};
+%
+%\node [circle] (i) at (7.5,0){};
+%\node [circle] (j) at (7.5,-1){};
+%\node (dots) at (7.5,-1.4){$\vdots$};
+%\node [circle] at (7.5,-2) (k){};
+%\node [circle] at (7.5,-3)(l){};
+%\path[-] (i) edge[green,ultra thick] (j);
+%\path[-] (k) edge[green,ultra thick] (l);
+%\draw [decorate] ([xshift=2mm]i.east) --node[right=2mm]{$k_m$} ([xshift=2mm]l.east);
+%\end{tikzpicture}
+\end{tabular}
+\]
+\vspace{-.4em}
+
+\end{block}
+
+%---------------------%
+
+\begin{block}{Example}
+Consider the reduced expression $\w = 56521201021328$ for $w \in W(B_9)$, which has braid chain factorization:
+\[
+565\mid 2120102132 \mid 8.
+\]
+Then $|[\w]_b|=2\cdot 5\cdot 1 =10$ and $\mathcal{B}([\w]_b)$ has 10 vertices.
+\begin{figure}
+\includegraphics[scale=2.85]{BraidGraphEx1.pdf}
+%\begin{tikzpicture}[scale=1.25,every circle node/.style={draw, circle, fill ,inner sep=1pt}]
+%\node [circle,] (1) at (0,-3){};
+%\node [circle] (2) at (0,-5){};
+%\path[-] (1) edge[green,ultra thick]  (2);
+%
+%\node (x) at (1.5,-4) {$\Box$};
+%
+%\node [circle] (3) at (3,0){};
+%\node [circle] (4) at (3,-2){};
+%\node [circle] (5) at (3,-4){};
+%\node [circle] (6) at (3,-6){};
+%\node [circle] (7) at (3,-8){};
+%\path[-] (3) edge[green,ultra thick]  (4);
+%\path[-] (4) edge[green,ultra thick]  (5);
+%\path[-] (5) edge[green,ultra thick]  (6);
+%\path[-] (6) edge[green,ultra thick]  (7);
+%
+%\node (e) at (4.5,-4) {$=$};
+%
+%
+%\node [circle] (8) at (6,0){};
+%\node [circle] (9) at (6,-2){};
+%\node [circle] (10) at (6,-4){};
+%\node [circle] (11) at (6,-6){};
+%\node [circle] (12) at (6,-8){};
+%
+%\node [circle] (13) at (8,0){};
+%\node [circle] (14) at (8,-2){};
+%\node [circle] (15) at (8,-4){};
+%\node [circle] (16) at (8,-6){};
+%\node [circle] (17) at (8,-8){};
+%
+%%down
+%\path[-] (8) edge[green,ultra thick]  (9);
+%\path[-] (9) edge[green,ultra thick]  (10);
+%\path[-] (10) edge[green,ultra thick]  (11);
+%\path[-] (11) edge[green,ultra thick]  (12);
+%\path[-] (13) edge[green,ultra thick]  (14);
+%\path[-] (14) edge[green,ultra thick]  (15);
+%\path[-] (15) edge[green,ultra thick]  (16);
+%\path[-] (16) edge[green,ultra thick]  (17);
+%
+%%across
+%\path[-] (8) edge[green,ultra thick]  (13);
+%\path[-] (9) edge[green,ultra thick]  (14);
+%\path[-] (10) edge[green,ultra thick]  (15);
+%\path[-] (11) edge[green,ultra thick]  (16);
+%\path[-] (12) edge[green,ultra thick]  (17);
+%
+%\end{tikzpicture}
+\end{figure}
+
+% Additionally, we define $X_{2l-1}$ to be the number of braid chains of length $2l-1$ in our braid chain factorization.
+%\vspace{.6em}
+
+\end{block}
+
+%---------------------%
+
+\begin{block}{Example}
+
+%These products of graphs can also result in three dimensional graphs, as is the case when we
+Consider the reduced expression $\w = 12143465676$ for $w \in W(A_7)$, which has braid chain factorization:
+\[
+121 \mid 434 \mid 65676.
+\]
+Then $|[\w]_b|=2\cdot 2\cdot 3 = 12$ and $\mathcal{B}([\w]_b)$ has 12 vertices.
+
+\begin{figure}
+\includegraphics[scale=3.18]{BraidGraphEx2.pdf}
+%\begin{tikzpicture}[scale=1.7,every circle node/.style={draw, circle, fill ,inner sep=1pt}]
+%\node [circle] (1) at (0,-3){};
+%\node [circle] (2) at (0,-5){};
+%\path[-] (1) edge[green,ultra thick] (2);
+%
+%\node (x1) at (1.5,-4) {$\Box$};
+%
+%\node [circle] (3) at (3,-3){};
+%\node [circle] (4) at (3,-5){};
+%\path[-] (3) edge[green,ultra thick] (4);
+%
+%
+%\node (x2) at (4.5,-4) {$\Box$};
+%
+%\node [circle] (5) at (6,-2){};
+%\node [circle] (6) at (6,-4){};
+%\node [circle] (7) at (6,-6){};
+%\path[-] (5) edge[green,ultra thick]  (6);
+%\path[-] (6) edge[green,ultra thick]  (7);
+%
+%\node (e) at (7.5,-4) {$=$};
+%
+%
+%%not dotted
+%\node [circle] (8) at (9,-2){};
+%\node [circle] (9) at (9,-4){};
+%\node [circle] (10) at (9,-6){};
+%\path[-] (8) edge[green,ultra thick]  (9);
+%\path[-] (9) edge[green,ultra thick]  (10);
+%
+%\node [circle] (11) at (9.9,-2.5){};
+%\node [circle] (12) at (9.9,-4.5){};
+%\node [circle] (13) at (9.9,-6.5){};
+%\path[-] (11) edge[green,ultra thick] (12);
+%\path[-] (12) edge[green,ultra thick]  (13);
+%
+%\node [circle] (14) at (11,-2){};
+%\node [circle] (15) at (11,-4){};
+%\node [circle] (16) at (11,-6){};
+%\path[-] (14) edge[green,ultra thick] (15);
+%\path[-] (15) edge[green,ultra thick]  (16);
+%
+%\path[-] (8) edge[green,ultra thick]  (11);
+%\path[-] (11) edge[green,ultra thick]  (14);
+%\path[-] (9) edge[green,ultra thick]  (12);
+%\path[-] (12) edge[green,ultra thick]  (15);
+%\path[-] (10) edge[green,ultra thick]  (13);
+%\path[-] (13) edge[green,ultra thick]  (16);
+%
+%%back
+%\node [circle] (20) at (10.1,-1.5){};
+%\node [circle] (21) at (10.1,-3.5){};
+%\node [circle] (22) at (10.1,-5.5){};
+%%upper square
+%\path[-] (8) edge[green,ultra thick]  (20);
+%\path[-] (20) edge[green,ultra thick]  (14);
+%%dotted lines
+%%\path[draw] (20) edge[green,thick] (21);
+%%\path[draw] (21) edge[green,thick]  (22);
+%
+%\path[draw] (20) edge[green,ultra thick] (21);
+%\path[draw] (21) edge[green,ultra thick]  (22);
+%
+%\path[draw] (9) edge[green,ultra thick]  (21);
+%\path[draw] (10) edge[green,ultra thick]  (22);
+%
+%%\path[draw] (20) edge[green,thick]  (14);
+%\path[draw] (21) edge[green,ultra thick]  (15);
+%\path[draw] (22) edge[green,ultra thick]  (16);
+%
+%\end{tikzpicture}
+\end{figure}
+\vspace{-.03em}
+\end{block}
+
+
+%\begin{block}{Conjecture}
+%The expanded star reduction graph \manstar$(A_n)$ is ranked.
+%\end{block}
+%---------------------%
+%\begin{block}{Open Questions}
+%\begin{enumerate}
+%%\item What does the expanded star reduction graph look like for $A_n$ when $n>3$?
+%\item How are braid-related heaps related in \manstar$(A_n)$?
+%\item Can we classify the star irreducible heaps?
+%%\item How many star irreducible heaps are there?
+%%\item How large are the commutation classes associated to star irreducible heaps?
+%%\item What is the maximum length of a star irreducible heap?
+%\item What are the possible degrees of vertices in \manstar$(A_n)$?
+%\item The \alert{weight} of a heap is the number of reduced expressions in the corresponding commutation class. What is the structure of the weights? 
+%\item Can we classify the maximal heaps in \manstar$(A_n)$?
+%\end{enumerate}
+%\end{block}
+%---------------------%
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}
