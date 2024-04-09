@@ -659,7 +659,8 @@
               {\MakeUppercase\listfigurename}}%
     \@starttoc{lof}%
     \if@restonecol\twocolumn\fi
-    \addcontentsline{toc}{front}{\listfigurename}}
+%    \addcontentsline{toc}{front}{\listfigurename}
+	}
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand\listoftables{%
     \if@twocolumn

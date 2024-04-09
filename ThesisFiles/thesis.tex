@@ -9,6 +9,14 @@
 \usepackage[lmargin=1in,rmargin=1in]{geometry}
 \usepackage{setspace}
 
+\usepackage[titles]{tocloft} 
+\usepackage{tocbasic}
+
+% reduce space between dots
+\renewcommand{\cftdotsep}{3.3}
+
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+
 \input{preamble}
 
 \begin{document}
@@ -25,7 +33,10 @@
 
 \tableofcontents
 
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
+
 \newpage
 \pagestyle{plain}
 \pagenumbering{arabic}
