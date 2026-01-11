@@ -27,8 +27,8 @@
     </p>
 </introduction>
 
-	<section xml:id="elements-of-style-for-proofs" class="unnumbered">
-		<title>Elements of Style for Proofs</title>
+	<!-- <section xml:id="elements-of-style-for-proofs" class="unnumbered">
+		<title>Elements of Style for Proofs</title> -->
 
 		<p>
 			Mathematics is about discovering proofs and writing them clearly and compellingly. The following guidelines apply whenever you write a proof. Keep these guidelines handy so that you may refer to them as you write your proofs.
@@ -37,7 +37,7 @@
 		<p><ol>
 			<li>
 					<p>
-						<term>The burden of communication lies on you, not on your reader.</term> It is your job to explain your thoughts; it is not your reader’s job to guess them from a few hints. You are trying to convince a skeptical reader who does not believe you, so you need to argue with airtight logic in crystal clear language; otherwise the reader will continue to doubt. If you did not write something on the paper, then (a) you did not communicate it,(b) the reader did not learn it, and (c) the grader has to assume you did not know it in the first place.
+						<term>The burden of communication lies on you, not on your reader.</term> It is your job to explain your thoughts; it is not your reader’s job to guess them from a few hints. You are trying to convince a skeptical reader who does not believe you, so you need to argue with airtight logic in crystal clear language; otherwise the reader will continue to doubt. If you did not write something on the paper, then (a) you did not communicate it, (b) the reader did not learn it, and (c) the grader has to assume you did not know it in the first place.
 					</p>
 			</li>
 
@@ -236,9 +236,7 @@
 			</li>
 
 		</ol></p>
-	</section>
-
-
+	<!-- </section> -->
 
 </article>
 
