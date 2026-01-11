@@ -3,7 +3,7 @@
 
   <docinfo>
 
-    <document-id>authorslastnamelowercase-ShortTitleCamelCase</document-id>
+    <document-id>ernst-ElementsOfStyle</document-id>
 
     <macros>\newcommand{\foo}{b^{ar}}</macros>
     <latex-image-preamble>\usepackage{tikz}</latex-image-preamble>
@@ -14,7 +14,7 @@
 <author>
   Dana C. Ernst
 </author>
-<date>January 1, 2026</date>
+<date>January 10, 2026</date>
 
 <introduction xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
     <p>
