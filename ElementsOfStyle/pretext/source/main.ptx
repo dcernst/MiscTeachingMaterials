@@ -174,11 +174,11 @@
 					</p>
 			
 					<p>
-						Phrases indicating the quantifier <q>for all</q> include <q>Let <m>x\in S</m></q>; <q>for all <m>x\in S</m></q>; <q>for every <m>x\in S</m></q>; <q>for each <m>x\in S</m></q>; etc. Phrases indicating the quantifier <q>some</q> or <q>there exists</q>) include <q>for some <m>x\in S</m></q>; <q>there exists an <m>x\in S</m></q>; <q>for a suitable choice of <m>x\in S</m></q>; etc.
+						Phrases indicating the quantifier <q>for all</q> include <q>Assume <m>x\in S</m></q>; <q>for all <m>x\in S</m></q>; <q>for every <m>x\in S</m></q>; <q>for each <m>x\in S</m></q>; etc. Phrases indicating the quantifier <q>some</q> or <q>there exists</q>) include <q>for some <m>x\in S</m></q>; <q>there exists an <m>x\in S</m></q>; <q>for a suitable choice of <m>x\in S</m></q>; etc.
 					</p>
 			
 					<p>
-						Once you have said <q>Let <m>x\in S</m>,</q> the letter <m>x</m> has its meaning defined. You do not need to say <q>for all <m>x\in S</m></q> again, and you definitely should <em>not</em> say <q>let <m>x\in S</m></q> again.
+						Once you have said <q>Assume <m>x\in S</m>,</q> the letter <m>x</m> has its meaning defined. You do not need to say <q>for all <m>x\in S</m></q> again, and you definitely should <em>not</em> say <q>assume <m>x\in S</m></q> again.
 					</p>
 			</li>
 

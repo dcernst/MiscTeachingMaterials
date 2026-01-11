@@ -5,17 +5,12 @@
         <directories external="../assets" generated="../generated-assets"/>
     </source>
 
-    <html platform="web">
-        <platform portable="yes" />
+    <html>
+        <platform host ="web" portable="yes" />
         <css theme="denver"/>
     </html>
 
-    <common>
-        <!-- When writing an article for a specific journal, you can   -->
-        <!-- specify the name of the journal to get appropriate latex. -->
-        <!-- See the guide for a list of valid names:
-          https://pretextbook.org/doc/guide/html/appendix-journals.html#appendix-journals -->
-
-        <!--<journal name="ams" /> -->
+   <common>
+        <tableofcontents level="0" />
     </common>
 </publication>
