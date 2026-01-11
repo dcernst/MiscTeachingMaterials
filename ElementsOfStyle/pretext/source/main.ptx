@@ -12,11 +12,14 @@
 <article  xml:id="elementsofstyle">
 
 <title>Elements of Style for Proofs</title>
+<frontmatter>
+  <!-- <date>January 10, 2026</date> -->
+  <bibinfo>
+  <author>Dana C. Ernst</author>
+  </bibinfo>
 
-<author>
-  Dana C. Ernst
-</author>
-<date>January 10, 2026</date>
+<titlepage><titlepage-items/></titlepage>
+</frontmatter>
 
 <introduction xml:id="intro" xmlns:xi="http://www.w3.org/2001/XInclude">
     <p>
