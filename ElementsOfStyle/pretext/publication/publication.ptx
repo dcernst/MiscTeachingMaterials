@@ -7,7 +7,8 @@
 
     <html>
         <platform host ="web" portable="yes" />
-        <css theme="denver"/>
+        <css theme="boulder"/>
+        <!-- <css theme="denver"/> -->
     </html>
 
     <common>
