@@ -10,7 +10,11 @@
         <css theme="denver"/>
     </html>
 
-   <common>
+    <common>
         <tableofcontents level="0" />
     </common>
+
+    <numbering>
+        <divisions level="0" /> 
+    </numbering>
 </publication>
