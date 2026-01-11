@@ -5,8 +5,9 @@
         <directories external="../assets" generated="../generated-assets"/>
     </source>
 
-    <html>
+    <html platform="web">
         <platform portable="yes" />
+        <css theme="denver"/>
     </html>
 
     <common>
